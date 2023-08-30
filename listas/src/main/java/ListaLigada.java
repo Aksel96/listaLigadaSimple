@@ -1,5 +1,3 @@
-import java.lang.ref.Reference;
-
 public class ListaLigada {
     Nodo cabeza;
 
@@ -22,7 +20,7 @@ public class ListaLigada {
         Nodo temporal = cabeza;
         if (lista != null){
             while (temporal != null){
-                System.out.println(temporal.valor + " \n");
+                System.out.println(temporal.valor + " ");
                 temporal = temporal.enlace;
             }
         }else {
@@ -31,17 +29,22 @@ public class ListaLigada {
     }
     public Nodo busquedaPorValor(Object valor){
         Nodo temporal = cabeza;
-        if (temporal.getValor() == valor){
+        if (temporal.getValor().equals(valor)){
             return temporal;
         }
         while (true){
             if (temporal.enlace != null){
-                if (temporal.getValor() != valor){
+                if (!temporal.getValor().equals(valor)){
                     temporal = temporal.enlace;
                 }else {
                     return temporal;
                 }
             }else {
+                if (temporal.enlace==null){
+                    if (temporal.getValor().equals(valor)){
+                        return temporal;
+                    }
+                }
                 break;
             }
             }
@@ -51,12 +54,12 @@ public class ListaLigada {
         if (cabeza == null){
             return;
         }
-        if (cabeza.valor == valor){
+        if (cabeza.valor.equals(valor)){
             cabeza = cabeza.enlace;
         }
 
         Nodo temporal = cabeza;
-        while (temporal.enlace != null && temporal.enlace.getValor() != valor){
+        while (temporal.enlace != null && !temporal.enlace.valor.equals(valor)){
             temporal = temporal.enlace;
         }
         if (temporal.enlace != null){

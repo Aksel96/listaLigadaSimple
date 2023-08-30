@@ -1,5 +1,3 @@
-import java.lang.ref.Reference;
-
 public class Nodo {
     Object valor;
     Nodo enlace;
