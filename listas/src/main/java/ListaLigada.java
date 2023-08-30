@@ -63,4 +63,12 @@ public class ListaLigada {
             temporal.enlace = temporal.enlace.enlace;
         }
     }
+    public void imprimirLista(){
+        Nodo temporal = cabeza;
+        while (temporal != null){
+            System.out.println(temporal.getValor() + " ");
+            temporal = temporal.enlace;
+
+        }
+    }
 }
