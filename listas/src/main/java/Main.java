@@ -17,7 +17,7 @@ public class Main {
                 switch (opcionMenuList){
                     case 1:
                         System.out.println("##########################");
-                        lista.acceso(lista);
+                        lista.acceso();
                         System.out.println("##########################");
                         break;
                     case 2:

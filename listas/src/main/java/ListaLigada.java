@@ -16,15 +16,11 @@ public class ListaLigada {
             temporal.enlace = nuevoNodo;
         }
     }
-    public void acceso(ListaLigada lista){
+    public void acceso(){
         Nodo temporal = cabeza;
-        if (lista != null){
-            while (temporal != null){
-                System.out.println(temporal.valor + " ");
-                temporal = temporal.enlace;
-            }
-        }else {
-            System.out.println("La lista esta vacia");
+        while (temporal != null){
+            System.out.println(temporal.valor + " ");
+            temporal = temporal.enlace;
         }
     }
     public Nodo busquedaPorValor(Object valor){
@@ -66,12 +62,5 @@ public class ListaLigada {
             temporal.enlace = temporal.enlace.enlace;
         }
     }
-    public void imprimirLista(){
-        Nodo temporal = cabeza;
-        while (temporal != null){
-            System.out.println(temporal.getValor() + " ");
-            temporal = temporal.enlace;
 
-        }
-    }
 }
