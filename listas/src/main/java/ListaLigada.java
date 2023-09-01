@@ -1,3 +1,10 @@
+/*
+Autor: Aksel Villela
+        UNAM
+    FES ARAGON
+ESTRUCTURAS DE DATOS
+    Agosto 2023
+ */
 public class ListaLigada {
     Nodo cabeza;
 

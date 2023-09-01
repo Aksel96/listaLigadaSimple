@@ -1,5 +1,10 @@
-import java.nio.file.StandardWatchEventKinds;
-
+/*
+Autor: Aksel Villela
+        UNAM
+    FES ARAGON
+ESTRUCTURAS DE DATOS
+    Agosto 2023
+ */
 public class ListaLigadaDoble {
     NodoDoble inicio;
     NodoDoble fin;
