@@ -36,8 +36,17 @@ public class Main {
                     }while (!opcionList.equals("S"));
                     break;
                 case "3":
-                    menuListaCircular();
-
+                    ListaCircular listaCircular = new ListaCircular();
+                    do {
+                        menuListaCircular();
+                        Scanner scannerMenuLista = new Scanner(System.in);
+                        int opcionMenuList = scannerMenuLista.nextInt();
+                        if (!(opcionMenuList == 5)){
+                            listaCircular(opcionMenuList,listaCircular);
+                        }else {
+                            opcionList = "S";
+                        }
+                    }while (!opcionList.equals("S"));
                     break;
                 case "4":
                     System.out.println("Saliendo del programa...");
@@ -76,7 +85,6 @@ public class Main {
         System.out.println(" 5) Salir");
         System.out.println("------------------------------------------------------");
         System.out.print("-> ");
-
     }
     public static void menuListaDoble(){
         System.out.println("\n------------------------------------------------------");
@@ -183,12 +191,46 @@ public class Main {
                 break;
             default:
                 System.out.println("Opcion no valida");
+        }
+    }
+    public static void listaCircular(int opcion,ListaCircular lista){
+        switch (opcion){
+            case 1:
+                System.out.println("##########################");
+                lista.acceso();
+                System.out.println("##########################");
+                break;
+            case 2:
+                System.out.print("Introduzca el valor a buscar en el lista: ");
+                Scanner scanBusqueda = new Scanner(System.in);
+                Object valor = scanBusqueda.nextLine();
+                Nodo nodo = lista.buscar(valor);
+                System.out.println("##########################");
+                if (nodo != null){
+                    System.out.println(nodo);
+                }else {
+                    System.out.println("NODO NO ENCONTRADO");
+                }
+                System.out.println("##########################");
+                break;
+            case 3:
+                System.out.print("Introduzca el valor del nuevo nodo: ");
+                Scanner scanInsercion = new Scanner(System.in);
+                Object valorNodo = scanInsercion.nextLine();
+                lista.insercion(valorNodo);
+                break;
+            case 4:
+                System.out.print("Introduzca el valor del nodo a eliminar: ");
+                Scanner scanEliminar = new Scanner(System.in);
+                Object valorNodoEliminar = scanEliminar.nextLine();
+                lista.eliminar(valorNodoEliminar);
+                break;
+            case 5:
+                break;
+            default:
+                System.out.println("Opcion no valida");
 
         }
-
-
-
     }
-
 
 }

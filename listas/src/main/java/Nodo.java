@@ -26,8 +26,7 @@ public class Nodo {
     @Override
     public String toString() {
         return "Nodo{" +
-                "valor=" + valor +
-                ", enlace=" + enlace +
+                "valor=" + valor.toString() +
                 '}';
     }
 }
