@@ -66,5 +66,4 @@ public class ListaCircular {
         return cabeza == null;
     }
 
-
 }

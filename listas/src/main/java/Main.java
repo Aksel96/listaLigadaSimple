@@ -15,7 +15,7 @@ public class Main {
                         menuLista();
                         Scanner scannerMenuLista = new Scanner(System.in);
                         int opcionMenuList = scannerMenuLista.nextInt();
-                        if (!(opcionMenuList == 5)){
+                        if (!(opcionMenuList == 6)){
                             listaSimple(opcionMenuList,lista);
                         }else {
                             opcionList = "S";
@@ -28,7 +28,7 @@ public class Main {
                         menuListaDoble();
                         Scanner scannerMenuLista = new Scanner(System.in);
                         int opcionMenuList = scannerMenuLista.nextInt();
-                        if (!(opcionMenuList == 6)) {
+                        if (!(opcionMenuList == 7)) {
                             listaDoble(opcionMenuList, listaDoble);
                         } else {
                             opcionList = "S";
@@ -82,7 +82,8 @@ public class Main {
         System.out.println(" 2) Busqueda");
         System.out.println(" 3) Insercion");
         System.out.println(" 4) Eliminacion");
-        System.out.println(" 5) Salir");
+        System.out.println(" 5) Invertir");
+        System.out.println(" 6) Salir");
         System.out.println("------------------------------------------------------");
         System.out.print("-> ");
     }
@@ -95,7 +96,8 @@ public class Main {
         System.out.println(" 3) Insercion al Inicio");
         System.out.println(" 4) Insercion al Final");
         System.out.println(" 5) Eliminacion");
-        System.out.println(" 6) Salir");
+        System.out.println(" 6) Invertir");
+        System.out.println(" 7) Salir");
         System.out.println("------------------------------------------------------");
         System.out.print("-> ");
     }
@@ -144,6 +146,12 @@ public class Main {
                 lista.eliminar(valorNodoEliminar);
                 break;
             case 5:
+                System.out.println("##########################");
+                System.out.println("Se invirtio la lista:");
+                lista.invertir();
+                lista.acceso();
+                System.out.println("##########################");
+            case 6:
                 break;
             default:
                 System.out.println("Opcion no valida");
@@ -188,6 +196,13 @@ public class Main {
                 lista.eliminar(valorNodoEliminar);
                 break;
             case 6:
+                System.out.println("##########################");
+                System.out.println("Se invirtio la lista:");
+                lista.invertir();
+                lista.acceso();
+                System.out.println("##########################");
+                break;
+            case 7:
                 break;
             default:
                 System.out.println("Opcion no valida");

@@ -62,5 +62,17 @@ public class ListaLigada {
             temporal.enlace = temporal.enlace.enlace;
         }
     }
+    public void invertir(){
+        Nodo previo = null;
+        Nodo actual = cabeza;
+        Nodo siguiente = null;
+        while (actual != null){
+            siguiente = actual.enlace;
+            actual.enlace = previo;
+            previo = actual;
+            actual = siguiente;
+        }
+        cabeza = previo;
+    }
 
 }

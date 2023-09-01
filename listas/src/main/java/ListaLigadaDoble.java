@@ -21,13 +21,14 @@ public class ListaLigadaDoble {
     }
     public void insercionFinal(Object valor){
         NodoDoble nuevoNodo = new NodoDoble(valor);
-        if (inicio == null){
+        if (fin == null){
             inicio = nuevoNodo;
+            fin = nuevoNodo;
         }else {
             nuevoNodo.enlaceLast = fin;
             fin.enlaceNext = nuevoNodo;
+            fin = nuevoNodo;
         }
-        fin = nuevoNodo;
     }
     public void eliminar(Object valor){
         NodoDoble actual = inicio;
@@ -69,6 +70,19 @@ public class ListaLigadaDoble {
             actual = actual.enlaceNext;
         }
         return null;
+    }
+    public void invertir(){
+        NodoDoble temp = null;
+        NodoDoble actual = inicio;
+        while (actual != null){
+            temp = actual.enlaceLast;
+            actual.enlaceLast = actual.enlaceNext;
+            actual.enlaceNext = temp;
+            actual = actual.enlaceLast;
+        }
+        temp = inicio;
+        inicio = fin;
+        fin = temp;
     }
 }
 
